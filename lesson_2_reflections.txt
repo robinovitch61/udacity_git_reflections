@@ -1,0 +1,12 @@
+<touch> creates files in current directory in Bash. <rm> removes them. <man> gives the manual for the command that follows <man>
+
+<ls-a> in Bash displays hidden (system) files starting with ".". Cloning an existing repository transfers this metadata to your computer
+
+<git init> initializes a new repository in the current workspace/directory
+	• No commits are created with an init command
+
+<git status> shows which files have changes since the last commit
+
+Working directory (computer hard drive) -> Staging Area -> Repository
+	• To add files to staging area: <git add FILENAME>
+	• To remove files from staging area: <git rm --cached FILENAME>
