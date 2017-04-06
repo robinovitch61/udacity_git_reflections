@@ -14,3 +14,7 @@ To add color coding, <git config --global color.ui auto>
 
 Obtain an old version of the repository by using <git checkout COMMIT#>
 	• Warning: detatched HEAD state is ok. HEAD is the commit version you're currently working on. 
+
+NOTE: In configuring sublime as default editor, used this command:
+<git config --global core.editor "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w">
+	• Changed "Sublime Text 2.app" to "Sublime Text.app" for it to work.
