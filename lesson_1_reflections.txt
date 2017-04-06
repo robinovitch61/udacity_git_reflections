@@ -1,0 +1,16 @@
+The diff command allowed me to easily see the differences between 2 files. It works especially well for long files.
+
+Having total access to the entire history of a file could help you resolve mistakes, fix bugs, go in different directions after committing to a wrong direction, and show your progress much more quickly and easily.
+
+Git commits save a version of your code. It is done manually and can be done offline. It is best to do after a single action is taken (one bug fix, one feature added, etc.)
+	• Note that you can see changes using git log (or git log --stat)
+	• Compare two files using git diff + the two files commit #'s
+
+Note that a repository contains a bunch of files, and a commit saves all the changes in a given repository
+	• <git log --stat> allows you to see how many files were changed in a repository for each commit
+	• <git clone> copies an entire repository (and its history) from one computer to another
+
+To add color coding, <git config --global color.ui auto>
+
+Obtain an old version of the repository by using <git checkout COMMIT#>
+	• Warning: detatched HEAD state is ok. HEAD is the commit version you're currently working on. 
