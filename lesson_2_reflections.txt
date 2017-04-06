@@ -10,3 +10,5 @@
 Working directory (computer hard drive) -> Staging Area -> Repository
 	• To add files to staging area: <git add FILENAME>
 	• To remove files from staging area: <git rm --cached FILENAME>
+
+<git diff> with no arguments compares the working directory to the staging area.
