@@ -1,0 +1,10 @@
+<git remote> shows all current remote repositories
+
+To add repository on github as remote:
+	• <git remote add REPOSITORYNAME URL>
+		• If only one remote, standard to name it "origin" --> <git remote add origin URL>
+	• Need to provide URL to github page (viewable under repository page on github)
+
+<git remote -v> (v for verbose) shows both url (fetch and push) and remote repository name
+
+<git push REMOTENAME BRANCHNAME> copies local repository branch onto github
