@@ -55,3 +55,12 @@ Can delete branch label once it is merged into master
 Commits will be sorted by timestamp once merges happen
 
 <git merge master BRANCHNAME>
+
+<git show [OPTIONAL COMMIT ID]> shows what changes were introduced by a commit compared to its parent
+
+Conflicts:
+	• Find by searching ">>>>>"
+	• HEAD is your own code
+	• MASTER is the code in master right now
+	• MIDDLE SECTION is code both versions modified ("common ancestor")
+	• Edit code to satisfactory state, then remove special lines
