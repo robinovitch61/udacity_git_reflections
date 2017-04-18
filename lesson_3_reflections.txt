@@ -1,3 +1,4 @@
+GITHUB USEAGE:
 <git remote> shows all current remote repositories
 
 To add repository on github as remote:
@@ -8,3 +9,11 @@ To add repository on github as remote:
 <git remote -v> (v for verbose) shows both url (fetch and push) and remote repository name
 
 <git push REMOTENAME BRANCHNAME> copies local repository branch onto github
+
+<git pull REMOTENAME BRANCHNAME> copies remote repository branch contents onto local repository
+
+Forking:
+	• Create copy of someone's github repository by clicking "fork" on desktop site
+	• Clone your fork with <git clone HTTPADDRESSOFFORK>
+	• Cloning a fork automatically adds a remote (check with <git remote -v>)
+	• Edit, add, commit, and push/pull to/from your fork locally
