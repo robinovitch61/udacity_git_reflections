@@ -15,5 +15,16 @@ To add repository on github as remote:
 Forking:
 	• Create copy of someone's github repository by clicking "fork" on desktop site
 	• Clone your fork with <git clone HTTPADDRESSOFFORK>
-	• Cloning a fork automatically adds a remote (check with <git remote -v>)
+	• Cloning automatically adds a remote (check with <git remote -v>)
 	• Edit, add, commit, and push/pull to/from your fork locally
+
+<git fetch REMOTENAME> gets the commit from github to your local repository. You can then locally merge.
+	• This 2-step process (fetch then merge) is exactly what happens when you <git pull> 
+		• i.e. git pull = git fetch + git merge
+
+Inspect local copies from fetch using <git log origin/master> or <git diff origin/master master>
+	• master (local to machine) and origin/master (another "head") are in the same place locally after a push. 
+		• If you commit, your master follows, but origin/master stays behind. 
+		• If you fetch your origin/master updates to where master was on github.
+
+If <git status> is Out-of-sync, there are commit(s) on origin/master and master that aren't present on each other
