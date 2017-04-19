@@ -21,6 +21,7 @@ Forking:
 <git fetch REMOTENAME> gets the commit from github to your local repository. You can then locally merge.
 	• This 2-step process (fetch then merge) is exactly what happens when you <git pull> 
 		• i.e. git pull = git fetch + git merge
+		• git fetch allows you to look at the changes before merging
 
 Inspect local copies from fetch using <git log origin/master> or <git diff origin/master master>
 	• master (local to machine) and origin/master (another "head") are in the same place locally after a push. 
@@ -28,3 +29,6 @@ Inspect local copies from fetch using <git log origin/master> or <git diff origi
 		• If you fetch your origin/master updates to where master was on github.
 
 If <git status> is Out-of-sync, there are commit(s) on origin/master and master that aren't present on each other
+
+Workflow: pull fork, create branch, then add, commit, and push (with BRANCHNAME instead of master on push).
+	• Can create pull request on github with your pushed branch (request to pull it into fork)

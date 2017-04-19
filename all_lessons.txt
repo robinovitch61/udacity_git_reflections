@@ -1,0 +1,133 @@
+LESSON 1:
+
+The diff command allowed me to easily see the differences between 2 files. It works especially well for long files.
+
+Having total access to the entire history of a file could help you resolve mistakes, fix bugs, go in different directions after committing to a wrong direction, and show your progress much more quickly and easily.
+
+Git commits save a version of your code. It is done manually and can be done offline. It is best to do after a single action is taken (one bug fix, one feature added, etc.)
+	• Note that you can see changes using git log (or git log --stat)
+	• Compare two files using git diff + the two files commit #'s
+
+Note that a repository contains a bunch of files, and a commit saves all the changes in a given repository
+	• <git log --stat> allows you to see how many files were changed in a repository for each commit
+	• <git clone> copies an entire repository (and its history) from one computer to another
+
+To add color coding, <git config --global color.ui auto>
+
+Obtain an old version of the repository by using <git checkout COMMIT#>
+	• Warning: detatched HEAD state is ok. HEAD is the commit version you're currently working on. 
+
+NOTE: In configuring sublime as default editor, used this command:
+<git config --global core.editor "'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl' -n -w">
+	• Changed "Sublime Text 2.app" to "Sublime Text.app" for it to work.
+
+
+
+
+LESSON 2:
+
+<touch> creates files in current directory in Bash. <rm> removes them. <man> gives the manual for the command that follows <man>
+
+<ls-a> in Bash displays hidden (system) files starting with ".". Cloning an existing repository transfers this metadata to your computer
+
+<git init> initializes a new repository in the current workspace/directory
+	• No commits are created with an init command
+
+<git status> shows which files have changes since the last commit
+
+Working directory (computer hard drive) -> Staging Area -> Repository
+	• To add files to staging area: <git add FILENAME>
+	• To remove files from staging area: <git rm --cached FILENAME>
+
+<git diff> with no arguments compares the working directory to the staging area.
+
+<git diff --staged> compares staging area with repository
+
+Branching:
+	• Labels for commits
+	• Master: name given to main branch in most repositoriest (automatically created)
+	• Detached head: looking at commit that was not labeled with branch name
+	• Can check out branch
+	• Give branches descriptive names
+	• Current last commit on branch: "tip" of branch
+	• Merging: combining two branches/commits
+	• New feature of fixing bug--> new branch
+	• Master branch never breaks, always works
+	• Develop branch is in progress stuff
+	• Experimental branch is sketchiest/most broken/least quality
+
+<git branch NAME> creates new branch with name NAME
+
+<git branch> (no arguments) shows current branches (starred branch is currently checked out)
+
+Use <git checkout BRANCHNAME> to check out new branch
+
+Remote branches are branches other people have made. If checked out, acts like your own branch.
+
+<git log --graph --oneline BRANCH1 BRANCH2> shows history of branches in arguments
+
+each commit stores data about its "parent", or previous branch
+	• If you have two branch tips, one or another may be unreachable!
+
+In detached HEAD state, can use <git checkout -b NEWBRANCHNAME>
+	• This is equivalent to running the following:j
+		1) git branch NEWBRANCHNAME
+		2) git checkout NEWBRANCHNAME
+
+Merging: combining two branches
+	• Git will ask you to clarify what exactly it should merge together in unclear cases
+	• Git has record of code before branches diverged, and can create combined version strategically
+
+Can delete branch label once it is merged into master
+
+Commits will be sorted by timestamp once merges happen
+
+<git merge master BRANCHNAME>
+
+<git show [OPTIONAL COMMIT ID]> shows what changes were introduced by a commit compared to its parent
+
+Conflicts:
+	• Find by searching ">>>>>"
+	• HEAD is your own code
+	• MASTER is the code in master right now
+	• MIDDLE SECTION is code both versions modified ("common ancestor")
+	• Edit code to satisfactory state, then remove special lines
+
+
+
+LESSON 3:
+
+GITHUB USEAGE:
+<git remote> shows all current remote repositories
+
+To add repository on github as remote:
+	• <git remote add REPOSITORYNAME URL>
+		• If only one remote, standard to name it "origin" --> <git remote add origin URL>
+	• Need to provide URL to github page (viewable under repository page on github)
+
+<git remote -v> (v for verbose) shows both url (fetch and push) and remote repository name
+
+<git push REMOTENAME BRANCHNAME> copies local repository branch onto github
+
+<git pull REMOTENAME BRANCHNAME> copies remote repository branch contents onto local repository
+
+Forking:
+	• Create copy of someone's github repository by clicking "fork" on desktop site
+	• Clone your fork with <git clone HTTPADDRESSOFFORK>
+	• Cloning automatically adds a remote (check with <git remote -v>)
+	• Edit, add, commit, and push/pull to/from your fork locally
+
+<git fetch REMOTENAME> gets the commit from github to your local repository. You can then locally merge.
+	• This 2-step process (fetch then merge) is exactly what happens when you <git pull> 
+		• i.e. git pull = git fetch + git merge
+		• git fetch allows you to look at the changes before merging
+
+Inspect local copies from fetch using <git log origin/master> or <git diff origin/master master>
+	• master (local to machine) and origin/master (another "head") are in the same place locally after a push. 
+		• If you commit, your master follows, but origin/master stays behind. 
+		• If you fetch your origin/master updates to where master was on github.
+
+If <git status> is Out-of-sync, there are commit(s) on origin/master and master that aren't present on each other
+
+Workflow: pull fork, create branch, then add, commit, and push (with BRANCHNAME instead of master on push).
+	• Can create pull request on github with your pushed branch (request to pull it into fork)
